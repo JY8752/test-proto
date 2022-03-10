@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option = java_package = "com.example.grpcspringapp.proto.user";
+option = java_multiple_files = true;
+option = csharp_namespace = "GrpcSpringApp.Proto"
+
+package user;
+
+import "common/common.proto"
+
+service User {
+  rpc Register(common.Empty) returns (UserResponse) {}
+  rpc GetUser(UserRequest) returns (UserResponse) {}
+  rpc GetUsers(common.Empty) returns (repeated UserResponse) {}
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  common.Gender gender = 3;
+  bool enabled = 4;
+}
+
+message UserRequest {
+  sring id = 1;
+}
