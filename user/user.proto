@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option = java_package = "com.example.grpc-spring-app.proto.user";
 option = java_multiple_files = true;
-option = csharp_namespace = "GrpcSpringApp.Proto"
 
 package user;
 
