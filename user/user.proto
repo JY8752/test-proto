@@ -1,16 +1,21 @@
 syntax = "proto3";
 
+<<<<<<< HEAD
 option = java_package = "com.example.grpc-spring-app.proto.user";
 option = java_multiple_files = true;
+=======
+option java_package = "com.example.grpcspringapp.proto.user";
+option java_multiple_files = true;
+>>>>>>> 188df18 (更新)
 
 package user;
 
-import "common/common.proto"
+import "test-proto/common/common.proto";
 
 service User {
   rpc Register(common.Empty) returns (UserResponse) {}
   rpc GetUser(UserRequest) returns (UserResponse) {}
-  rpc GetUsers(common.Empty) returns (repeated UserResponse) {}
+  rpc GetUsers(common.Empty) returns (UserListResponse) {}
 }
 
 message UserResponse {
@@ -21,5 +26,9 @@ message UserResponse {
 }
 
 message UserRequest {
-  sring id = 1;
+  string id = 1;
+}
+
+message UserListResponse {
+  repeated UserResponse user_list = 1;
 }
